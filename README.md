@@ -40,8 +40,6 @@ To run the Parity Bit Simulator locally on your machine, follow these steps:
    java ParityBit
    ```
 
-3. **Follow the on-screen instructions** to input the 8-bit binary data sequence and observe the simulation of data transmission and error detection.
-
 ## Usage
 
 1. **Input**: Enter an 8-bit binary data sequence without spaces when prompted.
