@@ -61,7 +61,7 @@ public class ParityBit {
     }
 
     private static boolean[] simulateTransmission(byte[] data, byte parityBit) {
-        boolean[] receivedData = new boolean[data.length];
+        boolean[] receivedData = new boolean[9]; // Extend array size to 9
 
         // Simulate sending and receiving data
         for (int i = 0; i < data.length; i++) {
@@ -89,8 +89,8 @@ public class ParityBit {
     private static boolean checkForErrors(boolean[] receivedData) {
         // Check if the total count of 'true' (1s) is even (even parity)
         int countOnes = 0;
-        for (boolean bit : receivedData) {
-            if (bit) {
+        for (int i = 0; i < 8; i++) { // Ensure loop runs 8 times for 8 data bits
+            if (receivedData[i]) {
                 countOnes++;
             }
         }
