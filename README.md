@@ -65,4 +65,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Replace placeholders like `your-username`, `parity-bit-simulator`, and adjust content according to your specific project details. This README provides a clear overview of the project, instructions for installation and usage, guidelines for contributing, and licensing information. It helps users and potential contributors understand your project quickly and effectively.
