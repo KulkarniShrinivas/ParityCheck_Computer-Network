@@ -25,11 +25,13 @@ public class ParityBit {
 
         // Add parity bit
         // Even parity: Add 1 if the count of 1s is odd, else add 0
+        // Odd parity: Adding 1 if the count of 1s is even, else add 0
+
         byte parityBit = calculateParityBit(data);
         String dataWithParity = byteData + parityBit;
         System.out.println("Original data with parity bit: " + dataWithParity);
 
-        // Simulate sending and receiving the data
+        // Simulate sending and receiving the data.
 
         System.out.println("Sender is sending data...");
         boolean[] receivedData = simulateTransmission(data, parityBit);
@@ -41,6 +43,7 @@ public class ParityBit {
         }
 
         // Check for errors
+        // Checking if the total count of 'true' (1s) is even (even parity)
         boolean hasError = checkForErrors(receivedData);
         if (hasError) {
             System.out.println("\nError detected in the received data.");
@@ -48,6 +51,10 @@ public class ParityBit {
             System.out.println("\nNo error detected in the received data.");
         }
     }
+
+    // Calculating the parity bit based on the data bits
+    // Even parity: Add 1 if the count of 1s is odd, else add 0
+    // Odd parity: Adding 1 if the count of 1s is even, else add 0
 
     private static byte calculateParityBit(byte[] data) {
         int countOnes = 0;
@@ -59,6 +66,11 @@ public class ParityBit {
         // Return 1 if the count of 1s is odd (even parity), else return 0
         return (byte) (countOnes % 2 == 0 ? 0 : 1);
     }
+    // Simulating the transmission of data packets and parity bit
+    // Simulating successful transmission with 80% chance (example scenario)
+    // Retransmitting the packet if acknowledgment is not received
+    // Simulating receiving the parity bit
+    // Returning an array of booleans representing the received data
 
     private static boolean[] simulateTransmission(byte[] data, byte parityBit) {
         boolean[] receivedData = new boolean[9]; // Extend array size to 9
@@ -80,11 +92,22 @@ public class ParityBit {
         return receivedData;
     }
 
+    // Simulating the transmission of a single packet
+    // Simulating successful transmission with 80% chance (example scenario)
+    // Returning true if the packet was successfully transmitted, else false
+    // Simulating the transmission of a single packet
     private static boolean sendPacket(byte data, int sequenceNumber) {
         // Simulate successful transmission with 80% chance (example scenario)
         double random = Math.random();
         return random < 0.8;
     }
+
+    // Checking for errors in the received data
+    // Checking if the total count of 'true' (1s) is even (even parity)
+    // Returning true if an error is detected, else false
+    // Checking for errors in the received data
+    // Checking if the total count of 'true' (1s) is even (even parity)
+
 
     private static boolean checkForErrors(boolean[] receivedData) {
         // Check if the total count of 'true' (1s) is even (even parity)
