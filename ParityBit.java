@@ -112,7 +112,7 @@ public class ParityBit {
     private static boolean checkForErrors(boolean[] receivedData) {
         // Check if the total count of 'true' (1s) is even (even parity)
         int countOnes = 0;
-        for (int i = 0; i < 8; i++) { // Ensure loop runs 8 times for 8 data bits
+        for (int i = 0; i < 8; i++) { 
             if (receivedData[i]) {
                 countOnes++;
             }
